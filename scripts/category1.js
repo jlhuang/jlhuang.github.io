@@ -1,5 +1,5 @@
 window.onload = function() {
-    let mylist = localStorage.getItem("mylist");
+    let mylist = localStorage.getItem("key");
     let category1 = mylist["商品分類1"];
     alert(JSON.stringify(mylist));
     let i = 1;

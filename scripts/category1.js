@@ -1,5 +1,6 @@
 window.onload = function() {
     let mylist = localStorage.getItem("mylist");
+    alert(mylist);
     let category1 = mylist["商品分類1"];
     let i = 1;
     for (let key in category1) {

@@ -5,7 +5,7 @@ let mylist = {"商品分類1":{"商品11":"概要11","商品12":"概要12","商�
               "商品分類5":{"商品51":"概要51","商品52":"概要52","商品53":"概要53"}};
 
 window.onload = function() {
-    localStorage.setItem("mylist", mylist);
+    localStorage.setItem("key", mylist);
     let flag1 = false;
     let flag2 = false;
     let flag3 = false;

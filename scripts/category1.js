@@ -6,7 +6,7 @@ window.onload = function() {
     for (let key in category1) {
         alert(key);
         document.getElementById("product1"+i).textContent = key;
-        //document.getElementById("summary1"+i).textContent = category1[key];
+        document.getElementById("summary1"+i).textContent = category1[key];
         i++;
     }
 };

@@ -6,6 +6,7 @@ let mylist = {"商品分類1":{"商品11":"概要11","商品12":"概要12","商�
 
 window.onload = function() {
     localStorage.setItem("key", mylist);
+    alert(JSON.stringify(localStorage.getItem("key")));
     let flag1 = false;
     let flag2 = false;
     let flag3 = false;

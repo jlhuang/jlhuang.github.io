@@ -1,9 +1,9 @@
 window.onload = function() {
     let mylist = localStorage.getItem("mylist");
     mylist = JSON.parse(mylist);
-    alert(mylist);
+    alert(JSON.stringify(mylist));
     let category1 = mylist["商品分類1"];
-    alert(category1);
+    alert(JSON.stringify(category1));
     let i = 1;
     for (let key in category1) {
         alert(key);

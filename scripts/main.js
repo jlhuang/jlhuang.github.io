@@ -12,19 +12,20 @@ window.onload = function() {
     let flag5 = false;
     let flag6 = false;
     for (let key in mylist) {
+        console.log(key);
         if (key === "商品分類1") flag1 = true;
-        if (key === "商品分類2") flag1 = true;
-        if (key === "商品分類3") flag1 = true;
-        if (key === "商品分類4") flag1 = true;
-        if (key === "商品分類5") flag1 = true;
-        if (key === "商品分類6") flag1 = true;
+        if (key === "商品分類2") flag2 = true;
+        if (key === "商品分類3") flag3 = true;
+        if (key === "商品分類4") flag4 = true;
+        if (key === "商品分類5") flag5 = true;
+        if (key === "商品分類6") flag6 = true;
     }
-    if (flag1 === false) document.getElementsByName("category1").style.visibility = "hidden";
-    if (flag2 === false) document.getElementsByName("category2").style.visibility = "hidden";
-    if (flag3 === false) document.getElementsByName("category3").style.visibility = "hidden";
-    if (flag4 === false) document.getElementsByName("category4").style.visibility = "hidden";
-    if (flag5 === false) document.getElementsByName("category5").style.visibility = "hidden";
-    if (flag6 === false) document.getElementsByName("category6").style.visibility = "hidden";
+    if (flag1 === false) document.getElementById("category1").style.visibility = "hidden";
+    if (flag2 === false) document.getElementById("category2").style.visibility = "hidden";
+    if (flag3 === false) document.getElementById("category3").style.visibility = "hidden";
+    if (flag4 === false) document.getElementById("category4").style.visibility = "hidden";
+    if (flag5 === false) document.getElementById("category5").style.visibility = "hidden";
+    if (flag6 === false) document.getElementById("category6").style.visibility = "hidden";
 };
 
 document.querySelector("html").onclick = function() {

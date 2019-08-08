@@ -5,6 +5,7 @@ let mylist = {"商品分類1":{"商品11":"概要11","商品12":"概要12","商�
               "商品分類5":{"商品51":"概要51","商品52":"概要52","商品53":"概要53"}};
 
 window.onload = function() {
+    localStorage.setItem("mylist", mylist);
     let flag1 = false;
     let flag2 = false;
     let flag3 = false;
@@ -12,7 +13,6 @@ window.onload = function() {
     let flag5 = false;
     let flag6 = false;
     for (let key in mylist) {
-        console.log(key);
         if (key === "商品分類1") flag1 = true;
         if (key === "商品分類2") flag2 = true;
         if (key === "商品分類3") flag3 = true;
@@ -28,6 +28,7 @@ window.onload = function() {
     if (flag6 === false) document.getElementById("category6").style.visibility = "hidden";
 };
 
+// no need to see, just for fan 
 document.querySelector("html").onclick = function() {
     let myheading = document.querySelector("h1");
     if (myheading.textContent === "HAPPY FACE") {

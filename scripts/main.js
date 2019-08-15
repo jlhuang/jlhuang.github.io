@@ -106,7 +106,30 @@ window.onload = function() {
     if (flag4 === false) document.getElementById("category4").style.visibility = "hidden";
     if (flag5 === false) document.getElementById("category5").style.visibility = "hidden";
     if (flag6 === false) document.getElementById("category6").style.visibility = "hidden";
+
+    $("#my_dialog1").dialog({  //创建dialog，并设置为非自启动
+        autoOpen: false,
+        closeOnEscape: false,
+        dialogClass: "no-close",
+        title: "商品1",
+        modal: true,
+        buttons: {
+            "确认": function(){
+                $("#category1").css("border-color", "red");
+                $("#my_dialog1").dialog("close");
+            },
+            "取消": function(){
+                $("#category1").css("border-color", "");
+                $("#my_dialog1").dialog("close");
+            },
+        },
+    });
+
+    $("#category1").click(function() { //通过按钮的点击事件打开dialog
+        $("#my_dialog1").dialog("open");
+    });
 };
+
 
 // no need to see, just for fan 
 document.querySelector("html").onclick = function() {

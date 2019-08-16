@@ -115,6 +115,7 @@ window.onload = function() {
         modal: true,
         buttons: {
             "确认": function(){
+                isBorderColorRed("category1");
                 $("#category1").css("border-color", "red");
                 $("#my_dialog1").dialog("close");
             },
@@ -124,12 +125,67 @@ window.onload = function() {
             },
         },
     });
-
     $("#category1").click(function() { //通过按钮的点击事件打开dialog
         $("#my_dialog1").dialog("open");
     });
+
+    $("#my_dialog2").dialog({  //创建dialog，并设置为非自启动
+        autoOpen: false,
+        closeOnEscape: false,
+        dialogClass: "no-close",
+        title: "商品2",
+        modal: true,
+        buttons: {
+            "确认": function(){
+                isBorderColorRed("category2");
+                $("#category2").css("border-color", "red");
+                $("#my_dialog2").dialog("close");
+            },
+            "取消": function(){
+                $("#category2").css("border-color", "");
+                $("#my_dialog2").dialog("close");
+            },
+        },
+    });
+    $("#category2").click(function() { //通过按钮的点击事件打开dialog
+        $("#my_dialog2").dialog("open");
+    });
+
+    $("#my_dialog3").dialog({  //创建dialog，并设置为非自启动
+        autoOpen: false,
+        closeOnEscape: false,
+        dialogClass: "no-close",
+        title: "商品3",
+        modal: true,
+        buttons: {
+            "确认": function(){
+                isBorderColorRed("category3");
+                $("#category3").css("border-color", "red");
+                $("#my_dialog3").dialog("close");
+            },
+            "取消": function(){
+                $("#category3").css("border-color", "");
+                $("#my_dialog3").dialog("close");
+            },
+        },
+    });
+    $("#category3").click(function() { //通过按钮的点击事件打开dialog
+        $("#my_dialog3").dialog("open");
+    });
 };
 
+function isBorderColorRed(buttonId) {
+    for (var i = 1; i <= 3; i++) {
+        var tmp = "category" + i;
+        if (tmp !== buttonId) {
+            var tmp_color = $("#"+tmp).css("border-color");
+            if (tmp_color === "rgb(255, 0, 0)") {
+                alert("商品变更");
+                $("#"+tmp).css("border-color", "");
+            }
+        }
+    }
+};
 
 // no need to see, just for fan 
 document.querySelector("html").onclick = function() {

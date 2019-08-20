@@ -4,7 +4,7 @@ let mylist = {"商品分類1":{"商品11":"概要11","商品12":"概要12","商�
               "商品分類4":{"商品41":"概要41","商品42":"概要42","商品43":"概要43","商品44":"概要44"},
               "商品分類5":{"商品51":"概要51","商品52":"概要52","商品53":"概要53","商品54":"概要54","商品55":"概要55","商品56":"概要56"}};
 
-window.onload = function() {
+$(document).ready(function() {
     var products = {"商品1":{"定期商品代码":"代码1",
                             "商品名":"商品名1",
                             "商品情报":"商品情报1",
@@ -116,11 +116,17 @@ window.onload = function() {
         buttons: {
             "确认": function(){
                 isBorderColorRed("category1");
-                $("#category1").css("border-color", "red");
+                //$("#category1").css("border-color", "red");
                 $("#my_dialog1").dialog("close");
             },
             "取消": function(){
-                $("#category1").css("border-color", "");
+                //$("#category1").css("border-color", "");
+                if ($("#category1").hasClass("red-button")) {
+                    $("#category1").removeClass("red-button");
+                }
+                if (!$("#category1").hasClass("not-red-button")) {
+                    $("#category1").addClass("not-red-button");
+                }
                 $("#my_dialog1").dialog("close");
             },
         },
@@ -138,11 +144,17 @@ window.onload = function() {
         buttons: {
             "确认": function(){
                 isBorderColorRed("category2");
-                $("#category2").css("border-color", "red");
+                //$("#category2").css("border-color", "red");
                 $("#my_dialog2").dialog("close");
             },
             "取消": function(){
-                $("#category2").css("border-color", "");
+                //$("#category2").css("border-color", "");
+                if ($("#category2").hasClass("red-button")) {
+                    $("#category2").removeClass("red-button");
+                }
+                if (!$("#category2").hasClass("not-red-button")) {
+                    $("#category2").addClass("not-red-button");
+                }
                 $("#my_dialog2").dialog("close");
             },
         },
@@ -160,11 +172,17 @@ window.onload = function() {
         buttons: {
             "确认": function(){
                 isBorderColorRed("category3");
-                $("#category3").css("border-color", "red");
+                //$("#category3").css("border-color", "red");
                 $("#my_dialog3").dialog("close");
             },
             "取消": function(){
-                $("#category3").css("border-color", "");
+                //$("#category3").css("border-color", "");
+                if ($("#category3").hasClass("red-button")) {
+                    $("#category3").removeClass("red-button");
+                }
+                if (!$("#category3").hasClass("not-red-button")) {
+                    $("#category3").addClass("not-red-button");
+                }
                 $("#my_dialog3").dialog("close");
             },
         },
@@ -172,18 +190,30 @@ window.onload = function() {
     $("#category3").click(function() { //通过按钮的点击事件打开dialog
         $("#my_dialog3").dialog("open");
     });
-};
+
+});
 
 function isBorderColorRed(buttonId) {
     for (var i = 1; i <= 3; i++) {
         var tmp = "category" + i;
         if (tmp !== buttonId) {
-            var tmp_color = $("#"+tmp).css("border-color");
-            if (tmp_color === "rgb(255, 0, 0)") {
-                alert("商品变更");
-                $("#"+tmp).css("border-color", "");
+            //var tmp_color = $("#"+tmp).css("border-color");
+            //if (tmp_color === "rgb(255, 0, 0)") {
+            //    alert("商品变更");
+            //    $("#"+tmp).css("border-color", "");
+            //}
+            if ($("#"+tmp).hasClass("red-button")) {
+                alert("商品変更");
+                $("#"+tmp).removeClass("red-button");
+                $("#"+tmp).addClass("not-red-button");
             }
         }
+    }
+    if (!$("#"+buttonId).hasClass("red-button")) {
+        if ($("#"+buttonId).hasClass("not-red-button")) {
+            $("#"+buttonId).removeClass("not-red-button");
+        }
+        $("#"+buttonId).addClass("red-button");
     }
 };
 

@@ -6,3 +6,13 @@ img {
 .no-close .ui-dialog-titlebar-close {
     display: none;
 }
+
+.red-button {
+    background-image: url(../images/red.png);
+    border-color: red;
+}
+
+.not-red-button {
+    background-image: url(../images/green.png);
+    border-color: green;
+}

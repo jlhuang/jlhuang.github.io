@@ -5,6 +5,11 @@ let mylist = {"商品分類1":{"商品11":"概要11","商品12":"概要12","商�
               "商品分類5":{"商品51":"概要51","商品52":"概要52","商品53":"概要53","商品54":"概要54","商品55":"概要55","商品56":"概要56"}};
 
 $(document).ready(function() {
+    //$("button").each(function(){
+    //    if($(this).attr("id") !== "button") {
+    //        $(this).addClass("class");
+    //    }
+    //});
     var products = {"商品1":{"定期商品代码":"代码1",
                             "商品名":"商品名1",
                             "商品情报":"商品情报1",
@@ -131,8 +136,9 @@ $(document).ready(function() {
             },
         },
     });
-    $("#category1").click(function() { //通过按钮的点击事件打开dialog
+    $("#category1").click(function(event) { //通过按钮的点击事件打开dialog
         $("#my_dialog1").dialog("open");
+        console.log(event);
     });
 
     $("#my_dialog2").dialog({  //创建dialog，并设置为非自启动
@@ -219,6 +225,7 @@ function isBorderColorRed(buttonId) {
 
 // no need to see, just for fan 
 document.querySelector("html").onclick = function() {
+    console.log(document.getElementById("my_p").innerHTML);
     let myheading = document.querySelector("h1");
     if (myheading.textContent === "HAPPY FACE") {
         myheading.textContent = "STOP CLICK ME";

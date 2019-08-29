@@ -10,6 +10,15 @@ $(document).ready(function() {
     //        $(this).addClass("class");
     //    }
     //});
+    var myDate= new Date(); 
+    var startYear=myDate.getFullYear()//起始年份 
+    var endYear=myDate.getFullYear()+10;//结束年份 
+    var obj=document.getElementById('myYear');
+    for (var i=startYear;i<=endYear;i++)
+    { 
+        obj.options.add(new Option(i,i)); 
+    }
+    
     var products = {"商品1":{"定期商品代码":"代码1",
                             "商品名":"商品名1",
                             "商品情报":"商品情报1",

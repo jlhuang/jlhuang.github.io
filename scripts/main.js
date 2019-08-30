@@ -22,7 +22,8 @@ $(document).ready(function() {
     } else {
         result = new Date(system_date.getFullYear() + 1,birthday.getMonth(),birthday.getDate());
     }
-    console.log(result);
+    var result_str = result.getFullYear()+"/"+("0"+(result.getMonth()+1)).slice(-2)+"/"+("0"+result.getDate()).slice(-2);
+    alert(result_str);
 
     document.querySelectorAll("button").forEach(function(element) {
         if(element.getAttribute("id") != "category1") {

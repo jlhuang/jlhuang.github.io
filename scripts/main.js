@@ -5,11 +5,30 @@ let mylist = {"商品分類1":{"商品11":"概要11","商品12":"概要12","商�
               "商品分類5":{"商品51":"概要51","商品52":"概要52","商品53":"概要53","商品54":"概要54","商品55":"概要55","商品56":"概要56"}};
 
 $(document).ready(function() {
-    //$("button").each(function(){
-    //    if($(this).attr("id") !== "button") {
-    //        $(this).addClass("class");
-    //    }
-    //});
+    var birthday = new Date("1999/01/01");
+    var system_date = new Date("2018/11/30");
+    var one_month_before = new Date(system_date.getFullYear(),birthday.getMonth(),birthday.getDate());
+    var one_day_before = new Date(system_date.getFullYear(),birthday.getMonth(),birthday.getDate());
+    // one month before
+    one_month_before.setMonth(one_month_before.getMonth() - 1);
+    // one day before
+    one_day_before.setDate(one_day_before.getDate() - 1);
+    // reset the year
+    one_month_before.setFullYear(system_date.getFullYear());
+    one_day_before.setFullYear(system_date.getFullYear());
+
+    if (system_date >= one_month_before && system_date <= one_day_before) {
+        result = new Date(system_date.getFullYear() + 2,birthday.getMonth(),birthday.getDate());
+    } else {
+        result = new Date(system_date.getFullYear() + 1,birthday.getMonth(),birthday.getDate());
+    }
+    console.log(result);
+
+    document.querySelectorAll("button").forEach(function(element) {
+        if(element.getAttribute("id") != "category1") {
+            console.log(element.getAttribute("id"));
+        }
+    });
     var myDate= new Date(); 
     var startYear=myDate.getFullYear()//起始年份 
     var endYear=myDate.getFullYear()+10;//结束年份 

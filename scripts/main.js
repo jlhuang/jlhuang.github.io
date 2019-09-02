@@ -10,7 +10,11 @@ $(document).ready(function() {
     for (var i = 0; i < test_array.length; i++) {
         if (regex.test(test_array[i])) {
             $("#myCheckbox").prop("checked", true);
-            $("#myCheckbox").prop("disabled", true);
+            $("#myCheckbox").off("click").on("click", function(){
+                console.log($(this).prop("checked"));
+                return false;
+            });
+            //$("#myCheckbox").prop("disabled", true);
         }
     }
 

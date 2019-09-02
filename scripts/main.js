@@ -9,7 +9,8 @@ $(document).ready(function() {
     var regex = /\d{8}/;
     for (var i = 0; i < test_array.length; i++) {
         if (regex.test(test_array[i])) {
-            console.log(test_array[i]);
+            $("#myCheckbox").prop("checked", true);
+            $("#myCheckbox").prop("disabled", true);
         }
     }
 

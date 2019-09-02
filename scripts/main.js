@@ -5,16 +5,20 @@ let mylist = {"商品分類1":{"商品11":"概要11","商品12":"概要12","商�
               "商品分類5":{"商品51":"概要51","商品52":"概要52","商品53":"概要53","商品54":"概要54","商品55":"概要55","商品56":"概要56"}};
 
 $(document).ready(function() {
-    var test_array = ["-","20190101","20190204","B","B1"];
+    var test_array = ["-","20190204","B","B1"];
     var regex = /\d{8}/;
     for (var i = 0; i < test_array.length; i++) {
         if (regex.test(test_array[i])) {
             $("#myCheckbox").prop("checked", true);
-            $("#myCheckbox").off("click").on("click", function(){
-                console.log($(this).prop("checked"));
-                return false;
-            });
-            //$("#myCheckbox").prop("disabled", true);
+            //$("#myCheckbox").off("click").on("click", function(){
+            //    console.log($(this).prop("checked"));
+            //    return false;
+            //});
+            $("#myCheckbox").prop("disabled", true);
+            if($('input:hidden[name="check"]').length == 0){
+                $('#myCheckbox').after('<input type="hidden" name="check" value="1" />');
+            }
+            console.log($("#myCheckbox").prop("checked"));
         }
     }
 

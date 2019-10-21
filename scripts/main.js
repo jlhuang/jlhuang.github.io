@@ -5,7 +5,10 @@ let mylist = {"商品分類1":{"商品11":"概要11","商品12":"概要12","商�
               "商品分類5":{"商品51":"概要51","商品52":"概要52","商品53":"概要53","商品54":"概要54","商品55":"概要55","商品56":"概要56"}};
 
 $(document).ready(function() {
-    console.log(Object.keys(mylist).length);
+    //console.log(Object.keys(mylist).length);
+    var rateproducts = [{"instrumentName":"AAA","goodsInfo":"BBB"}];
+    console.log(rateproducts.length);
+
     var test_array = ["-","20190204","B","B1"];
     var regex = /\d{8}/;
     for (var i = 0; i < test_array.length; i++) {
@@ -42,7 +45,12 @@ $(document).ready(function() {
     var result_str = result.getFullYear()+"/"+("0"+(result.getMonth()+1)).slice(-2)+"/"+("0"+result.getDate()).slice(-2);
     alert(result_str);
 
-    document.querySelectorAll("button").forEach(function(element) {
+    //console.log("the length of buttons is : " + $(":button").length);
+    $(":button").each(function(){
+        console.log(this.getAttribute("id"));
+    });
+    var buttons = document.querySelectorAll("button");
+    buttons.forEach(function(element) {
         if(element.getAttribute("id") != "category1") {
             console.log(element.getAttribute("id"));
         }

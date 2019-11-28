@@ -13,7 +13,7 @@ div#Contact h1 {
 div#Contact h1 {
 	margin-bottom: 24px;
 }
-div#Contact h1 span { /* 1ƒJƒ‰ƒ€—p */
+div#Contact h1 span { /* 1ã‚«ãƒ©ãƒ ç”¨ */
 	display: block;
 	padding: 0 16px 14px;
 	background: url("../common/images/ttl_bg_1col_btm.jpg") no-repeat left bottom;
@@ -63,7 +63,7 @@ div#Contact {
 	width: 100%;
 }
 div#Contact .submit div {
-	text-align: center;
+	text-align: left;
 	height: 242px;
 	width: 585px;
 	margin-right: auto;
@@ -72,7 +72,7 @@ div#Contact .submit div {
 
 
 input.text, textarea.text {
-	font: normal normal 100% /1.6 "‚l‚r ‚oƒSƒVƒbƒN", sans-serif, "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro";
+	font: normal normal 100% /1.6 "ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯", sans-serif, "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3", "Hiragino Kaku Gothic Pro";
 	padding: 0.5em 5px;
 	border: 1px solid #cccccc;
 	background: #ffffff;
